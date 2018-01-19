@@ -1,7 +1,7 @@
 <template>
   <li v-if="!todo.isEdit && !todo.isComplete">
     <span>
-      {{ text }}
+      {{ todo.text }}
     </span>
     <button @click="onHandler('complete')">
       complete
@@ -20,8 +20,11 @@
   </li>
   <li v-else>
     <input type="text" v-model="text">
-    <button @click="onHandler('save')">
+    <button @click="onHandler('save')" :disabled="text === ''">
       save
+    </button>
+    <button @click="onHandler('cancel')">
+      cancel
     </button>
   </li>
 </template>
@@ -29,7 +32,7 @@
 <script>
 export default {
   name: 'todo-item',
-  props: ['todo', 'edit', 'save', 'complete', 'restore'],
+  props: ['todo', 'edit', 'save', 'complete', 'restore', 'cancel'],
   data() {
     return {
       text: this.todo.text,
@@ -38,6 +41,7 @@ export default {
   methods: {
     onHandler(type) {
       this[type](this.todo, this.text);
+      this.text = this.todo.text;
     },
   },
 };

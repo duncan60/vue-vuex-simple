@@ -1,21 +1,16 @@
 <template>
   <main id="app">
-    <header>
-      <h1>Vue with Vuex Simple</h1>
-      <nav>
-        <ul class="nav-list">
-          <router-link class="nav-list__link" to="/todo">Todo</router-link>
-          <router-link class="nav-list__link" to="/fetch">Fetch</router-link>
-        </ul>
-      </nav>
-    </header>
+    <PageHeader/>
     <router-view/>
   </main>
 </template>
 
 <script>
+import PageHeader from '@/components/component/PageHeader';
+
 export default {
   name: 'App',
+  components: { PageHeader },
 };
 </script>
 
@@ -26,11 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 20px;
-}
-.nav-list {
-  padding: 0;
-  &__link {
-    padding: 10px;
-  }
 }
 </style>

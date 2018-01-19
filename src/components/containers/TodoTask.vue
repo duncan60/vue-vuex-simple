@@ -9,6 +9,7 @@
         :key="key"
         :edit="onEdit"
         :save="onSave"
+        :cancel="onCancel"
         :complete="onComplete">
       </TodoItem>
       <li>
@@ -65,6 +66,12 @@ export default {
       this.updateTodos({
         ...todo,
         text: newText,
+        isEdit: false,
+      });
+    },
+    onCancel(todo) {
+      this.updateTodos({
+        ...todo,
         isEdit: false,
       });
     },
