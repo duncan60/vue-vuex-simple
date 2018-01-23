@@ -7,7 +7,7 @@
         v-for="(item, key) in unCompleteTodos"
         :todo="item"
         :key="key"
-        :updateTodo="onUpdateTodo">
+        :updateTodo="updateTodo">
       </TodoItem>
       <li>
         <input
@@ -44,7 +44,7 @@ export default {
     },
   },
   methods: {
-    onUpdateTodo(type, todo, newText) {
+    updateTodo(type, todo, newText) {
       this.$store.dispatch('updateTodo', {
         type,
         todo,
