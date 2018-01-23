@@ -28,7 +28,7 @@
 <script>
 export default {
   name: 'todo-item',
-  props: ['todo', 'edit', 'save', 'complete', 'restore', 'cancel'],
+  props: ['todo', 'updateTodo'],
   data() {
     return {
       text: this.todo.text,
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     onHandler(type) {
-      this[type](this.todo, this.text);
+      this.updateTodo(type, this.todo, this.text);
       this.text = this.todo.text;
     },
   },

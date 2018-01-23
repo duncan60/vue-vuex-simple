@@ -40,22 +40,19 @@ describe('todo store - muations', () => {
 
   it(types.UPDATE_TODO, () => {
     todoStore.state = initState;
-    const updateText = {
-      id: 1,
-      text: '學習 JavaScript es6',
-      isEdit: false,
-      isComplete: false,
-    };
-    const updateEdit = {
-      id: 2,
-      text: '學習 Vue',
-      isEdit: true,
-      isComplete: false,
-    };
-    todoStore.mutations[types.UPDATE_TODO](todoStore.state, updateText);
+
+    todoStore.mutations[types.UPDATE_TODO](todoStore.state, {
+      type: 'save',
+      todo: initState.todos[1],
+      newText: '學習 JavaScript es6',
+    });
     expect(todoStore.state.todos[1].text).toEqual('學習 JavaScript es6');
 
-    todoStore.mutations[types.UPDATE_TODO](todoStore.state, updateEdit);
+    todoStore.mutations[types.UPDATE_TODO](todoStore.state, {
+      type: 'edit',
+      todo: initState.todos[2],
+      newTodo: '',
+    });
     expect(todoStore.state.todos[2].isEdit).toEqual(true);
   });
 

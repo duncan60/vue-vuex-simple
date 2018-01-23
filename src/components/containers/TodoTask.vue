@@ -7,10 +7,7 @@
         v-for="(item, key) in unCompleteTodos"
         :todo="item"
         :key="key"
-        :edit="onEdit"
-        :save="onSave"
-        :cancel="onCancel"
-        :complete="onComplete">
+        :updateTodo="onUpdateTodo">
       </TodoItem>
       <li>
         <input
@@ -47,45 +44,18 @@ export default {
     },
   },
   methods: {
-    updateTodos(todo) {
-      this.$store.dispatch('updateTodo', todo);
+    onUpdateTodo(type, todo, newText) {
+      this.$store.dispatch('updateTodo', {
+        type,
+        todo,
+        newText,
+      });
     },
     updateField(field, value) {
       this.$store.dispatch('updateField', { field, value });
     },
     onAddTodo() {
       this.$store.dispatch('addNewTodo');
-    },
-    onEdit(todo) {
-      this.updateTodos({
-        ...todo,
-        isEdit: true,
-      });
-    },
-    onSave(todo, newText) {
-      this.updateTodos({
-        ...todo,
-        text: newText,
-        isEdit: false,
-      });
-    },
-    onCancel(todo) {
-      this.updateTodos({
-        ...todo,
-        isEdit: false,
-      });
-    },
-    onComplete(todo) {
-      this.updateTodos({
-        ...todo,
-        isComplete: true,
-      });
-    },
-    onRestore(todo) {
-      this.updateTodos({
-        ...todo,
-        isComplete: false,
-      });
     },
   },
 };

@@ -7,7 +7,7 @@
           v-for="(item) in completeTodos"
           :todo="item"
           :key="item.id"
-          :restore="onRestore">
+          :updateTodo="onUpdateTodo">
         </todo-item>
       </ul>
   </div>
@@ -24,13 +24,11 @@ export default {
     },
   },
   methods: {
-    updateTodos(todo) {
-      this.$store.dispatch('updateTodo', todo);
-    },
-    onRestore(todo) {
-      this.updateTodos({
-        ...todo,
-        isComplete: false,
+    onUpdateTodo(type, todo, newText) {
+      this.$store.dispatch('updateTodo', {
+        type,
+        todo,
+        newText,
       });
     },
   },

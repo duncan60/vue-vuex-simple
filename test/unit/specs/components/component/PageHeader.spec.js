@@ -1,4 +1,4 @@
-import { mount, shallow } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import PageHeader from '@/components/component/PageHeader';
 
 describe('PageHeader.vue', () => {
@@ -8,7 +8,7 @@ describe('PageHeader.vue', () => {
     expect(template).toMatchSnapshot();
   });
   it('test render h1 title', () => {
-    const component = shallow(PageHeader);
+    const component = mount(PageHeader);
     const h1 = component.vm.$el.querySelector('h1').textContent;
     expect(h1).toEqual('Vue with Vuex Simple');
   });

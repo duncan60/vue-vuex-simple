@@ -27,8 +27,8 @@ const actions = {
   addNewTodo({ commit }) {
     commit(types.ADD_NEW_TODO);
   },
-  updateTodo({ commit }, todo) {
-    commit(types.UPDATE_TODO, todo);
+  updateTodo({ commit }, payload) {
+    commit(types.UPDATE_TODO, payload);
   },
   updateField({ commit }, fieldObj) {
     commit(types.UPDATE_FIELD, fieldObj);
@@ -51,8 +51,32 @@ const mutations = {
     state.newTodo = '';
   },
   [types.UPDATE_TODO](state, payload) {
-    state.todos[payload.id] = {
-      ...payload,
+    const { type, todo, newText } = payload;
+    const upateTodo = {
+      ...todo,
+    };
+    switch (type) {
+      case 'complete':
+        upateTodo.isComplete = true;
+        break;
+      case 'edit':
+        upateTodo.isEdit = true;
+        break;
+      case 'restore':
+        upateTodo.isComplete = false;
+        break;
+      case 'save':
+        upateTodo.isEdit = false;
+        upateTodo.text = newText;
+        break;
+      case 'cancel':
+        upateTodo.isEdit = false;
+        break;
+      default:
+        break;
+    }
+    state.todos[upateTodo.id] = {
+      ...upateTodo,
     };
   },
   [types.UPDATE_FIELD](state, payload) {

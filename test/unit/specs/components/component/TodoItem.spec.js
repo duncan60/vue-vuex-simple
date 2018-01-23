@@ -24,7 +24,7 @@ describe('TodoItem.vue', () => {
     expect(template).toMatchSnapshot();
   });
 
-  it('test isEdit rendering', () => {
+  it('test isEdit is true rendering', () => {
     const wrapper = mount(TodoItem, {
       propsData: {
         todo: {
@@ -37,7 +37,7 @@ describe('TodoItem.vue', () => {
     expect(template).toMatchSnapshot();
   });
 
-  it('test isComplete rendering', () => {
+  it('test isComplete is true rendering', () => {
     const wrapper = mount(TodoItem, {
       propsData: {
         todo: {

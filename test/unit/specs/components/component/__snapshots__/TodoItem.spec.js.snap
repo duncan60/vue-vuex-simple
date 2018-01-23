@@ -11,7 +11,7 @@ exports[`TodoItem.vue test initial rendering 1`] = `
 </li>
 `;
 
-exports[`TodoItem.vue test isComplete rendering 1`] = `
+exports[`TodoItem.vue test isComplete is true rendering 1`] = `
 <li><span>testing</span>
     <button>
         restore
@@ -19,7 +19,7 @@ exports[`TodoItem.vue test isComplete rendering 1`] = `
 </li>
 `;
 
-exports[`TodoItem.vue test isEdit rendering 1`] = `
+exports[`TodoItem.vue test isEdit is true rendering 1`] = `
 <li>
     <input type="text">
     <button>
