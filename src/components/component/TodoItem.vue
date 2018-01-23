@@ -1,8 +1,6 @@
 <template>
   <li v-if="!todo.isEdit && !todo.isComplete">
-    <span>
-      {{ todo.text }}
-    </span>
+    <span>{{todo.text}}</span>
     <button @click="onHandler('complete')">
       complete
     </button>
@@ -11,9 +9,7 @@
     </button>
   </li>
   <li v-else-if="todo.isComplete">
-    <span>
-      {{ todo.text }}
-    </span>
+    <span>{{todo.text}}</span>
     <button @click="onHandler('restore')">
       restore
     </button>

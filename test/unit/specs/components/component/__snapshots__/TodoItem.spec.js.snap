@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem.vue test initial rendering 1`] = `
+<li><span>testing</span>
+    <button>
+        complete
+    </button>
+    <button>
+        edit
+    </button>
+</li>
+`;
+
+exports[`TodoItem.vue test isComplete rendering 1`] = `
+<li><span>testing</span>
+    <button>
+        restore
+    </button>
+</li>
+`;
+
+exports[`TodoItem.vue test isEdit rendering 1`] = `
+<li>
+    <input type="text">
+    <button>
+        save
+    </button>
+    <button>
+        cancel
+    </button>
+</li>
+`;

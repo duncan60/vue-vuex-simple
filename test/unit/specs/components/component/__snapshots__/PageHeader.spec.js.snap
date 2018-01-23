@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader.vue test initial rendering 1`] = `
+<header>
+    <h1>Vue with Vuex Simple</h1>
+    <nav>
+        <ul class="nav-list">
+            <router-link to="/todo" class="nav-list__link">Todo</router-link>
+            <router-link to="/fetch" class="nav-list__link">Fetch</router-link>
+        </ul>
+    </nav>
+</header>
+`;
