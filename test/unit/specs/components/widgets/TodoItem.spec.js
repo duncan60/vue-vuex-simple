@@ -1,5 +1,5 @@
 import { mount, shallow } from '@vue/test-utils';
-import TodoItem from '@/components/component/TodoItem';
+import TodoItem from '@/components/widgets/TodoItem';
 
 let initProps = {};
 

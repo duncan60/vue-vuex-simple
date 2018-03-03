@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import PageHeader from '@/components/component/PageHeader';
+import PageHeader from '@/components/widgets/PageHeader';
 
 describe('PageHeader.vue', () => {
   it('test initial rendering', () => {
