@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Todo from '@/components/pages/todo/Todo';
-import Fetch from '@/components/pages/fetch/Fetch';
+import Todo from '@/views/Todo';
+import Fetch from '@/views/Fetch';
 
 Vue.use(Router);
 
