@@ -2,12 +2,12 @@
   <div>
     <h3>Todo Task</h3>
     <ul class="task-list">
-      <TodoItem class="task-list__item"
-                v-for="(item, key) in unCompleteTodos"
-                :todo="item"
-                :key="key"
-                :updateTodo="onUpdateTodo">
-      </TodoItem>
+      <todo-item class="task-list__item"
+                 v-for="(item, key) in unCompleteTodos"
+                 :todo="item"
+                 :key="key"
+                 :updateTodo="onUpdateTodo">
+      </todo-item>
       <li>
         <input placeholder="Enter text"
                v-model="newTodo">

@@ -3,9 +3,9 @@
     <h3>Todo Complete</h3>
     <ul class="task-list">
       <todo-item class="task-list__item task-list__item--complete"
-                 v-for="(item) in completeTodos"
+                 v-for="(item, key) in completeTodos"
                  :todo="item"
-                 :key="item.id"
+                 :key="key"
                  :updateTodo="onUpdateTodo">
       </todo-item>
     </ul>

@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <PageHeader/>
+    <page-header/>
     <router-view/>
   </main>
 </template>
