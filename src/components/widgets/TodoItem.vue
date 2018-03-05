@@ -15,8 +15,10 @@
     </button>
   </li>
   <li v-else>
-    <input type="text" v-model="text">
-    <button @click="onHandler('save')" :disabled="text === ''">
+    <input type="text"
+           v-model="text">
+    <button @click="onHandler('save')"
+            :disabled="text === ''">
       save
     </button>
     <button @click="onHandler('cancel')">
